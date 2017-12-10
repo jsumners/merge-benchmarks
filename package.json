@@ -1,0 +1,44 @@
+{
+  "name": "merge-benchmarks",
+  "version": "1.0.0",
+  "description": "A simple project to benchmark various object merge methods",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "build": "node compile.js && git add Readme.md",
+    "lint": "standard | snazzy"
+  },
+  "precommit": [
+    "lint",
+    "build"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/jsumners/merge-benchmarks.git"
+  },
+  "keywords": [
+    "merge",
+    "assign",
+    "benchmark"
+  ],
+  "author": "James Sumners <james.sumners@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jsumners/merge-benchmarks/issues"
+  },
+  "homepage": "https://github.com/jsumners/merge-benchmarks#readme",
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.3"
+  },
+  "dependencies": {
+    "extend": "^3.0.1",
+    "lodash.merge": "^4.6.0",
+    "merge": "^1.2.0",
+    "merge-deep": "^3.0.0",
+    "merge-options": "^1.0.0",
+    "nanobench": "^2.1.0"
+  }
+}
