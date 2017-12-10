@@ -22,55 +22,55 @@ NANOBENCH version 2
 > /Users/jsumners/n/bin/node index.js
 
 # menu: Object.assign 100k
-ok ~26 ms (0 s + 26259159 ns)
+ok ~25 ms (0 s + 25473770 ns)
 
 # menu: extend 100k
-ok ~8.28 ms (0 s + 8275061 ns)
+ok ~9.36 ms (0 s + 9356053 ns)
 
 # menu: extend deep copy 100k
-ok ~4.53 ms (0 s + 4526154 ns)
+ok ~251 ms (0 s + 250508084 ns)
 
 # menu: lodash.merge 100k
-ok ~351 ms (0 s + 350939333 ns)
+ok ~377 ms (0 s + 377038211 ns)
 
 # menu: merge 100k
-ok ~31 ms (0 s + 31463868 ns)
+ok ~34 ms (0 s + 34008210 ns)
 
 # menu: merge cloned recursive 100k
-ok ~38 ms (0 s + 38418317 ns)
+ok ~228 ms (0 s + 227889294 ns)
 
 # menu: merge-deep 100k
-ok ~425 ms (0 s + 424642177 ns)
+ok ~425 ms (0 s + 424877699 ns)
 
 # menu: merge-options 100k
-ok ~470 ms (0 s + 469694318 ns)
+ok ~486 ms (0 s + 485616655 ns)
 
 # webapp: Object.assign 100k
-ok ~18 ms (0 s + 18212737 ns)
+ok ~19 ms (0 s + 18705765 ns)
 
 # webapp: extend 100k
-ok ~8.57 ms (0 s + 8572379 ns)
+ok ~7.65 ms (0 s + 7647890 ns)
 
 # webapp: extend deep copy 100k
-ok ~7.31 ms (0 s + 7310780 ns)
+ok ~1.2 s (1 s + 204183868 ns)
 
 # webapp: lodash.merge 100k
-ok ~1.31 s (1 s + 306157971 ns)
+ok ~1.3 s (1 s + 299158750 ns)
 
 # webapp: merge 100k
-ok ~31 ms (0 s + 31328096 ns)
+ok ~33 ms (0 s + 33207226 ns)
 
 # webapp: merge-deep 100k
-ok ~2.07 s (2 s + 69078939 ns)
+ok ~2.12 s (2 s + 119579635 ns)
 
 # webapp: merge cloned recursive 100k
-ok ~38 ms (0 s + 38139796 ns)
+ok ~1.51 s (1 s + 513342357 ns)
 
 # webapp: merge-options 100k
-ok ~1.55 s (1 s + 549083741 ns)
+ok ~1.66 s (1 s + 662694535 ns)
 
 all benchmarks completed
-ok ~6.38 s (6 s + 382102826 ns)
+ok ~9.69 s (9 s + 693288002 ns)
 ```
 
 ## License

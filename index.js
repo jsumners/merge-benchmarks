@@ -28,7 +28,7 @@ bench('menu: extend 100k', function (b) {
 })
 
 bench('menu: extend deep copy 100k', function (b) {
-  run100k(b, fixtures.menu, extend.bind(true))
+  run100k(b, fixtures.menu, extend.bind(null, true))
 })
 
 bench('menu: lodash.merge 100k', function (b) {
@@ -40,7 +40,7 @@ bench('menu: merge 100k', function (b) {
 })
 
 bench('menu: merge cloned recursive 100k', function (b) {
-  run100k(b, fixtures.menu, merge.recursive.bind(true))
+  run100k(b, fixtures.menu, merge.recursive.bind(null, true))
 })
 
 bench('menu: merge-deep 100k', function (b) {
@@ -62,7 +62,7 @@ bench('webapp: extend 100k', function (b) {
 })
 
 bench('webapp: extend deep copy 100k', function (b) {
-  run100k(b, fixtures.webapp, extend.bind(true))
+  run100k(b, fixtures.webapp, extend.bind(null, true))
 })
 
 bench('webapp: lodash.merge 100k', function (b) {
@@ -78,7 +78,7 @@ bench('webapp: merge-deep 100k', function (b) {
 })
 
 bench('webapp: merge cloned recursive 100k', function (b) {
-  run100k(b, fixtures.webapp, merge.recursive.bind(true))
+  run100k(b, fixtures.webapp, merge.recursive.bind(null, true))
 })
 
 bench('webapp: merge-options 100k', function (b) {
