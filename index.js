@@ -3,6 +3,7 @@
 const bench = require('nanobench')
 const fixtures = require('./fixtures')
 
+const deepmerge = require('deepmerge')
 const extend = require('extend')
 const lodashMerge = require('lodash.merge')
 const merge = require('merge')
@@ -21,6 +22,10 @@ function run100k (b, data, method) {
 
 bench('menu: Object.assign 100k', function (b) {
   run100k(b, fixtures.menu, Object.assign)
+})
+
+bench('menu: deepmerge 100k', function (b) {
+  run100k(b, fixtures.menu, deepmerge)
 })
 
 bench('menu: extend 100k', function (b) {
@@ -55,6 +60,10 @@ bench('menu: merge-options 100k', function (b) {
 
 bench('webapp: Object.assign 100k', function (b) {
   run100k(b, fixtures.webapp, Object.assign)
+})
+
+bench('webapp: deepmerge 100k', function (b) {
+  run100k(b, fixtures.webapp, deepmerge)
 })
 
 bench('webapp: extend 100k', function (b) {

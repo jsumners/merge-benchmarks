@@ -9,6 +9,7 @@ are welcomed.
 
 ## Modules Tested
 
++ [deepmerge](https://www.npmjs.com/package/deepmerge)
 + [extend](https://www.npmjs.com/package/extend)
 + [lodash.merge](https://www.npmjs.com/package/lodash.merge)
 + [merge](https://www.npmjs.com/package/merge)
