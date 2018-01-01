@@ -2,13 +2,15 @@
 
 This is a simple microbenchmark suite to test various object merging modules.
 It is up to the viewer to make judgements on the results. Links to each tested
-module is provided so that the viewer can easily research each module.
+module is provided so that the viewer can easily research each module. Not all
+modules merge objects in the same manner (i.e. they produce different results).
 
 [Pull requests](https://github.com/jsumners/merge-benchmarks) with new tests
 are welcomed.
 
 ## Modules Tested
 
++ [conflate](https://www.npmjs.com/package/conflate)
 + [deepmerge](https://www.npmjs.com/package/deepmerge)
 + [extend](https://www.npmjs.com/package/extend)
 + [lodash.merge](https://www.npmjs.com/package/lodash.merge)
@@ -16,68 +18,46 @@ are welcomed.
 + [merge-deep](https://www.npmjs.com/package/merge-deep)
 + [merge-options](https://www.npmjs.com/package/merge-options)
 
+## Methodology
+
+Each module is benchmarked against two data sets. Each data set is taken
+from the [json.org example data](http://www.json.org/example.html). The
+examples used are:
+
+1. The [menu example](/fixtures/menu.json)
+1. The [webapp example](/fixtures/webapp.json)
+
+Each module is used to merge each respective data set into an empty object
+(`{}`). This is done 100,000 times per data set while measuring the time it
+takes to perform the set of all iterations.
+
 ## Results
 
 ```
-NANOBENCH version 2
-> /Users/jsumners/n/bin/node index.js
-
-# menu: Object.assign 100k
-ok ~21 ms (0 s + 21286845 ns)
-
-# menu: deepmerge 100k
-ok ~256 ms (0 s + 255848618 ns)
-
-# menu: extend 100k
-ok ~6.22 ms (0 s + 6216435 ns)
-
-# menu: extend deep copy 100k
-ok ~233 ms (0 s + 232777348 ns)
-
-# menu: lodash.merge 100k
-ok ~325 ms (0 s + 325111258 ns)
-
-# menu: merge 100k
-ok ~30 ms (0 s + 30285198 ns)
-
-# menu: merge cloned recursive 100k
-ok ~207 ms (0 s + 207394784 ns)
-
-# menu: merge-deep 100k
-ok ~411 ms (0 s + 411444235 ns)
-
-# menu: merge-options 100k
-ok ~483 ms (0 s + 483419625 ns)
-
-# webapp: Object.assign 100k
-ok ~19 ms (0 s + 18610117 ns)
-
-# webapp: deepmerge 100k
-ok ~984 ms (0 s + 984492230 ns)
-
-# webapp: extend 100k
-ok ~7.78 ms (0 s + 7783519 ns)
-
-# webapp: extend deep copy 100k
-ok ~1.22 s (1 s + 220733833 ns)
-
-# webapp: lodash.merge 100k
-ok ~1.32 s (1 s + 317323600 ns)
-
-# webapp: merge 100k
-ok ~33 ms (0 s + 33146648 ns)
-
-# webapp: merge-deep 100k
-ok ~2.45 s (2 s + 452388512 ns)
-
-# webapp: merge cloned recursive 100k
-ok ~1.38 s (1 s + 383987751 ns)
-
-# webapp: merge-options 100k
-ok ~1.67 s (1 s + 673943704 ns)
-
-all benchmarks completed
-ok ~11 s (11 s + 66194260 ns)
+System: Darwin/darwin x64 17.3.0 ~ Intel(R) Core(TM) i7-3720QM CPU @ 2.60GHz (cores/threads: 8)
+┌──────────────────────────┬─────────────────────────┬─────────────────────────┐
+│ method                   │ menu                    │ webapp                  │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ Object.assign            │ 0 s,  ms (24006905 ns)  │ 0 s,  ms (18777563 ns)  │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ conflate                 │ 0 s,  ms (18540914 ns)  │ 0 s,  ms (27950049 ns)  │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ deepmerge                │ 0 s,  ms (296223286 ns) │ 1 s,  ms (160777878 ns) │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ extend                   │ 0 s,  ms (6812154 ns)   │ 0 s,  ms (11171672 ns)  │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ extend (deep copy)       │ 0 s,  ms (274626814 ns) │ 1 s,  ms (465245511 ns) │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ lodash.merge             │ 0 s,  ms (484384486 ns) │ 1 s,  ms (652685300 ns) │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ merge                    │ 0 s,  ms (35800402 ns)  │ 0 s,  ms (38403399 ns)  │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ merge (cloned recursive) │ 0 s,  ms (238434107 ns) │ 1 s,  ms (463771741 ns) │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ merge-deep               │ 0 s,  ms (525041252 ns) │ 2 s,  ms (543072194 ns) │
+├──────────────────────────┼─────────────────────────┼─────────────────────────┤
+│ merge-options            │ 0 s,  ms (724818272 ns) │ 1 s,  ms (990879556 ns) │
+└──────────────────────────┴─────────────────────────┴─────────────────────────┘
 ```
 
 ## License

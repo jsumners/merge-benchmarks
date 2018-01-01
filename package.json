@@ -34,12 +34,13 @@
     "standard": "^10.0.3"
   },
   "dependencies": {
+    "cli-table": "^0.3.1",
+    "conflate": "^1.4.0",
     "deepmerge": "^2.0.1",
     "extend": "^3.0.1",
     "lodash.merge": "^4.6.0",
     "merge": "^1.2.0",
     "merge-deep": "^3.0.0",
-    "merge-options": "^1.0.0",
-    "nanobench": "^2.1.0"
+    "merge-options": "^1.0.0"
   }
 }
