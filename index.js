@@ -112,11 +112,11 @@ for (const key of Object.keys(suite)) {
 
 for (const key of Object.keys(suite)) {
   const menuSeconds = suite[key].timing.menu[0]
-  const menuMS = String(suite[key].timing.menu[1] / 1e6).substr(0, -4)
+  const menuMS = String(suite[key].timing.menu[1] / 1e6).slice(0, -4)
   const menuNS = suite[key].timing.menu[1]
 
   const webappSeconds = suite[key].timing.webapp[0]
-  const webappMS = String(suite[key].timing.webapp[1] / 1e6).substr(0, -4)
+  const webappMS = String(suite[key].timing.webapp[1] / 1e6).slice(0, -4)
   const webappNS = suite[key].timing.webapp[1]
 
   resultsTable.push([
